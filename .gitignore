@@ -1,0 +1,5 @@
+build/*
+application.macosx/*
+*.png
+*.gif
+*.jpg
