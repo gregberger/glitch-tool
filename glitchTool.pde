@@ -20,7 +20,7 @@ color threshold=0;
 // Arduino arduino;
 
 GlitcherInterface glitcher, glitcher1;
-
+GlitcherFactory factory = new GlitcherFactory();
 
 ControlP5 cp5;
 ControlFrame cf;
@@ -214,7 +214,7 @@ void saveGlitchFrame() {
 void keyPressed() {
   
   if(key >= 48 && key <= 57){
-      glitcher = GlitcherFactory.getGlitcher(key);
+      glitcher = factory.getGlitcher(key);
       glitcher.init(image);
       
   }
