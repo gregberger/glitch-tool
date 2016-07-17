@@ -1,4 +1,5 @@
 import java.awt.Component;
+
 //import org.firmata.*;
 //import processing.serial.*;
 //import cc.arduino.*;
@@ -211,42 +212,11 @@ void saveGlitchFrame() {
 
 
 void keyPressed() {
-  switch(key) {
-  case '1':
-    {
-      glitcher = new GlitcherOne();
+  
+  if(key >= 48 && key <= 57){
+      glitcher = GlitcherFactory.getGlitcher(key);
       glitcher.init(image);
-      break;
-    }
-  case '2':
-    {
-      glitcher = new GlitcherTwo();
-      glitcher.init(image);
-      break;
-    }
-  case '3':
-    {
-      glitcher = new GlitcherThree();
-      glitcher.init(image);
-      break;
-    }
-  case '4':
-    {
-      glitcher = new GlitcherFour();
-      glitcher.init(image);
-      break;
-    }
-  case '5':
-    {
-      glitcher = new GlitcherFive();
-      glitcher.init(image);
-      break;
-    }
-    case '6':{
-      glitcher = new GlitcherSix();
-      glitcher.init(image);
-      break;
-    }
+      
   }
   if (key==CODED) {
     if (keyCode== UP) {
